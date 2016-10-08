@@ -1,0 +1,69 @@
+<div ng-controller="landingController" class="home main-page landing-page">
+<loading></loading>
+  <header>
+  	  <div class="wrapper clearfix">
+  	    <h1 class="main-logo">
+  	      <a href="">Logo</a>
+  	    </h1>
+  	    <div class="welcome-text">
+  	      <img src="images/user-icon.jpg" class="user-icon">
+  	      <div class="user-text">
+  	        <p class="username">Welcome {{userName}}</p>
+  	        <a class="logout" ng-click="logout()" href="">Logout</a>
+  	      </div>
+  	    </div>
+  	  </div>
+  	</header>
+  <div class="home-content clearfix">
+
+
+    <p class="survey-text">
+      Have you filled your survey? 
+    </p>
+    <div class="survey-list-outer-wrapper">
+      <div class="survey-main-wrapper clearfix" ng-repeat="data in surveyData">
+        <div class="survey-inner-wrapper clearfix">
+          <a href="" ng-click="surveyMainPage(data.surveyId)">
+            <img class="survey-img" src="images/survey-img.png" />
+            <p class="survey-description">{{data.surveyName}}</p>
+            <p class="validity-info">
+            Valid from {{data.surveyStart | setDay}}<sup>{{data.surveyStart | setSuper}}</sup> {{data.surveyStart | setMonthYear}} - 
+            {{data.surveyEnd | setDay}}<sup>{{data.surveyStart | setSuper}}</sup> {{data.surveyEnd | setMonthYear}}
+            </p>
+          </a>
+          <div class="survey-status-img">
+            <div class="survey-status-wrapper">
+              <img ng-src="images/{{data.surveyId | changeStatus}}.png" />
+              <span>{{data.surveyId | changeStatus}}</span>
+              <span class="score" ng-if="(data.surveyId | setScore) != 0">Your Score: {{data.surveyId | setScore}}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-page-tag-line tag-line landing-page">
+    <img src="images/tmf-tag-line.png" width="200" />
+  </div>
+  
+</div>
+
+<script>
+  $( document ).ready(function() {
+    setTimeout(function() {
+      setHeight();
+    }, 50);
+  });
+
+  window.onresize = function() {
+    setHeight();
+  }
+
+  function setHeight() {
+        var height = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
+        var calculatedHeight = (height - $('header').outerHeight(true) - 75);
+        $('.survey-list-outer-wrapper').css('height', calculatedHeight);
+        
+      }
+</script>

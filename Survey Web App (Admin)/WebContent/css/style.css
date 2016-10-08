@@ -1,0 +1,365 @@
+/* Reset code */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, fieldset,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Header */
+.wrapper {
+	width: 95%;
+    margin: 0 auto;
+}
+
+header {
+	padding: 10px 0;
+    background: #eee;
+}
+
+header .main-logo {
+	width: 167px;
+    height: 70px;
+    margin: 0;
+    float: left;
+    background: url('../images/survey-logo.png');
+    background-size: cover;
+    text-indent: -99999px;
+}
+
+header .main-logo a {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+header .welcome-text {
+	margin: 15px 0 0;
+	float: right;
+    color: #265599;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header .user-icon {
+	width: 40px;
+	vertical-align: top;
+}
+
+header .welcome-text .user-text {
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+header .welcome-text .user-text p.username { margin-bottom: 5px; }
+
+header .welcome-text .user-text a.logout {
+  color: #faab00;
+  text-decoration: underline;
+}
+
+/* content */
+.survey-navigation {
+	margin-top: 10px;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.survey-navigation li {
+	display: inline-block;
+}
+
+.survey-navigation li a {
+	padding: 10px;
+	display: block;
+	border-radius: 3px;
+    background: #ccc;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.survey-navigation li.selected a {
+	background: #faab00;
+}
+
+.survey-main-page .view-title,
+.category-main-page .view-title,
+.question-main-page .view-title,
+.report-main-page .view-title,
+.assign-survey-main-page .view-title {
+	margin-top: 10px;
+	color: #265599;
+	font-weight: bold;
+	text-align: center;
+}
+
+.survey-main-page .view-title .title,
+.category-main-page .view-title .title,
+.question-main-page .view-title .title,
+.report-main-page .view-title .title,
+.assign-survey-main-page .view-title .title {
+	margin-top: 8px;
+	display: inline-block;
+    font-size: 20px;
+}
+
+.survey-main-page .add-survey,
+.question-main-page .add-question,
+.category-main-page .add-category,
+.assign-survey-main-page .assign-survey-btn { float: right; }
+
+.survey-main-page .add-survey span,
+.question-main-page .add-question span,
+.category-main-page .add-category span,
+.assign-survey-main-page .assign-survey-btn span {
+	width: 40px;
+    height: 40px;
+    float: right;
+    cursor: pointer;
+    text-indent: -99999px;
+}
+
+.survey-main-page .add-survey span {
+	background: url('../images/add-survey.png');
+	background-size: cover;
+}
+
+.question-main-page .add-question span {
+	background: url('../images/question-icon.png');
+	background-size: cover;
+}
+
+.category-main-page .add-category span {
+	background: url('../images/category-icon.png');
+	background-size: cover;
+}
+
+.assign-survey-main-page .assign-survey-btn span {
+	background: url('../images/assign-user-icon.png');
+	background-size: cover;
+}
+
+.add-survey-popup,
+.add-category-popup,
+.add-question-popup,
+.assign-survey-popup {
+	width: 500px;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	background: #fff;
+	font-size: 12px;
+}
+
+.add-survey-popup {
+	height: 240px;
+    margin: -120px 0 0 -250px;
+}
+
+.add-category-popup {
+    height: 140px;
+    margin: -70px 0 0 -250px;
+}
+
+.add-question-popup {
+	height: 350px;
+    margin: -175px 0 0 -250px;
+}
+
+.assign-survey-popup {
+	height: 290px;
+    margin: -145px 0 0 -250px;
+}
+
+.add-survey-popup form,
+.add-category-popup form,
+.add-question-popup form,
+.assign-survey-popup form { margin-top: 35px; }
+
+.add-survey-popup .close-add-survey-popup,
+.add-category-popup .close-add-category-popup,
+.add-question-popup .close-add-question-popup,
+.assign-survey-popup .close-assign-survey-popup {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 13px;
+}
+
+.add-survey-popup .submit-btn-wrapper,
+.add-category-popup .submit-btn-wrapper,
+.add-question-popup .submit-btn-wrapper,
+.assign-survey-popup .submit-btn-wrapper {	text-align: center; }
+
+.add-survey-popup .submit-btn-wrapper button,
+.add-survey-popup .submit-btn-wrapper button:active,
+.add-survey-popup .submit-btn-wrapper button:hover,
+.add-survey-popup .submit-btn-wrapper button:focus,
+.add-category-popup .submit-btn-wrapper button,
+.add-category-popup .submit-btn-wrapper button:active,
+.add-category-popup .submit-btn-wrapper button:hover,
+.add-category-popup .submit-btn-wrapper button:focus,
+.add-question-popup .submit-btn-wrapper button,
+.add-question-popup .submit-btn-wrapper button:active,
+.add-question-popup .submit-btn-wrapper button:hover,
+.add-question-popup .submit-btn-wrapper button:focus,
+.assign-survey-popup .submit-btn-wrapper button,
+.assign-survey-popup .submit-btn-wrapper button:active,
+.assign-survey-popup .submit-btn-wrapper button:hover,
+.assign-survey-popup .submit-btn-wrapper button:focus { 
+	border: none;
+	outline: none;
+	background: #faab00;
+    color: #fff;
+    font-weight: bold;
+}
+
+.add-survey-popup-overlay,
+.add-category-popup-overlay,
+.add-question-popup-overlay,
+.assign-survey-popup-overlay {
+	width: 100%;
+    height: 100%;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #000;
+	opacity: 0.7;
+}
+
+table {
+	font-size: 12px;
+	text-align: center;
+}
+
+table th {
+	font-weight: bold;
+	text-align: center;
+}
+
+td.question { text-align: left; }
+
+.edit span,
+.delete button {
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+}
+
+.edit span {
+	background: url('../images/edit.png');
+	background-size: cover;
+}
+
+.delete button {
+	background: url('../images/delete.png');
+	background-size: cover;
+}
+
+.report-main-page .survey-dropdown-wrapper {
+	text-align: right;
+}
+
+.report-main-page .survey-dropdown-wrapper select {
+	width: 400px;
+	display: inline-block;
+}
+
+.report-main-page .tab-pane { position: relative; }
+
+.report-main-page #chart-area {
+    max-width: 700px;
+    max-height: 350px;
+}
+
+.report-main-page #canvas-holder {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.report-main-page .overall-pie-legend {
+    width: 25%;
+    border: 1px solid #ccc;
+    padding: 5px 0 0 5px;
+    margin: 15px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+}
+
+.report-main-page .overall-pie-legend .bold { font-weight: bold; }
+
+.report-main-page .pie-legend-icon {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 1px 8px 15px 0;
+}
+
+.report-main-page .overall-pie-legend li p { display: inline-block; }
+
+.report-main-page .overall-pie-legend li:nth-child(1) .pie-legend-icon { background-color: #FF0000; }
+
+.report-main-page .overall-pie-legend li:nth-child(2) .pie-legend-icon { background-color: #F1F10F; }
+
+.report-main-page .overall-pie-legend li:nth-child(3) .pie-legend-icon { background-color: #0EA9EF; }
+
+.report-main-page .overall-pie-legend li:nth-child(4) .pie-legend-icon { background-color: #15EC15; }
+
+.report-main-page .overall-pie-legend li:nth-child(5) .pie-legend-icon { background-color: #FFA500; }
+
+.report-main-page .overall-pie-legend li:nth-child(6) .pie-legend-icon { background-color: #EC40D1; }
+
+.report-main-page .overall-pie-legend li:nth-child(7) .pie-legend-icon { background-color: #4047EC; }
+
+table.table>thead>tr>th,
+table tr th,
+table tr td { vertical-align: top; }
+
+table tbody tr:nth-child(even) {
+	background: #eee;
+}
+
+table thead tr {
+	background: #265599;
+    color: #fff;
+}
